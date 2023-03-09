@@ -8,7 +8,7 @@ public class CEP {
     private String logradouro;//rua
     private String complemento;
     private String bairro;
-    private String localidade;//cidadade
+    private String localidade;//cidade
     private String uf;//estado
 
     public String getCep() {

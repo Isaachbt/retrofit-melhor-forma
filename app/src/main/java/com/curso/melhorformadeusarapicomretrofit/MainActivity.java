@@ -37,13 +37,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Essa aqui cria uma retroft para lista varios dados.
-        retrofit = new Retrofit
+        /*retrofit = new Retrofit
                 .Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/photos/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-                /*
+*/
         //Essa aqui cria uma retroft normal.
         retrofit = new Retrofit
                 .Builder()//cria a retrofit
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())//escolhendo qual ira convert os dados q vem da API
                 .build();//retrofit criada
 
- */
 
         btnRecuperar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,9 +164,9 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<CEP>() {
             @Override
             public void onResponse(Call<CEP> call, Response<CEP> response) {
-                //caso de tudo certo em recuperar os dados, ele ira responder aqui
+                //caso tudo de certo em recuperar os dados, ele ira responder aqui
                 if (response.isSuccessful()){
-                    CEP cep = response.body();// a qui ele recupera todos os dados vindo da api, ja prontinho pra usar
+                    CEP cep = response.body();// aqui ele recupera todos os dados vindo da api, ja prontinho pra usar
                     txtRes.setText(cep.getLogradouro());//mostrando o dado recuperado
                 }
             }
